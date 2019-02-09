@@ -1,4 +1,13 @@
-class Calculator{
+class Ship{
+   constructor({
+      name = '',
+   }={}){
+      this.name = name;
+   }
+   
+}
+
+class SpaceShip extends Ship{
     /*
     constructor({a = 'default a value', b = 'default b value', c = 'default c value'} = {a:'default option a', b:'default option b', c:'default option c'}) {
 this.a = a;
@@ -14,14 +23,26 @@ this.c = c;
         gender = '',
         retired = false
      } = {} ){
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.spaceship = spaceship;
-        this.job = job;
-        this.gender = gender;
-        this.retired = retired;
+      super(spaceship);
+      
+      this.firstname = firstname;
+      this.lastname = lastname;
+      this.job = job;
+      this.gender = gender;
+      this.retired = retired;
      }
      
+     get firstname(){
+      return this._firstname;
+     }
+
+     set firstname(newFirstname){
+        this._firstname = newFirstname;
+     }
+
+      get spaceship(){
+         return this.name;
+      }
 
      methodA(){
         this.methodB();
@@ -33,6 +54,8 @@ this.c = c;
      
 }
 
-let t = new Calculator({firstname:'Cameron',lastname:'Stoner',spaceship:'Enterprise'});
+let t = new SpaceShip({firstname:'Pickard',lastname:'Stoner',spaceship:'Enterprise'});
+let tt = new SpaceShip({firstname:'Janeway',lastname:'Stoner',spaceship:'Voyager'});
 
-t.methodA();
+console.log(tt.spaceship);
+console.log(t.spaceship);
