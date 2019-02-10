@@ -1,8 +1,16 @@
+class Cruser{
+   constructor({capacity = 0}={_capacity:capacity}){
+      this._capacity = capacity;
+      return;
+   }
+}
+
 class Ship{
    constructor({
       name = '',
    }={}){
       this.name = name;
+      
    }
    
 }
@@ -30,6 +38,8 @@ this.c = c;
       this.job = job;
       this.gender = gender;
       this.retired = retired;
+
+      this._cruser = new Cruser({capacity:10});
      }
      
      get firstname(){
@@ -52,10 +62,17 @@ this.c = c;
         console.log("Method B");
      }
      
+     methodC(){
+        console.log(this._cruser._capacity);
+     }
 }
 
 let t = new SpaceShip({firstname:'Pickard',lastname:'Stoner',spaceship:'Enterprise'});
 let tt = new SpaceShip({firstname:'Janeway',lastname:'Stoner',spaceship:'Voyager'});
+let c = new Cruser({capacity:10});
+//console.log(c._capacity);
 
-console.log(tt.spaceship);
-console.log(t.spaceship);
+//console.log(tt.spaceship);
+//console.log(t.spaceship);
+
+t.methodC();
