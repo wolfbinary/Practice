@@ -63,7 +63,7 @@ this.c = c;
      }
      
      methodC(){
-        console.log(this._cruser._capacity);
+        //console.log(this._cruser._capacity);
      }
 }
 
@@ -76,3 +76,14 @@ let c = new Cruser({capacity:10});
 //console.log(t.spaceship);
 
 t.methodC();
+
+function getAdder(x){
+
+   function Add(y){
+      return x+y;
+   }
+
+   return Add;
+}
+
+console.log(getAdder(10)(5));
